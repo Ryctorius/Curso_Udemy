@@ -1,10 +1,10 @@
 nome = input('Digite seu nome:')
 idade = input('Digite sua idade:')
 
-if nome != '' and idade != '':
+if nome and idade:
    
     tamanho_nome = len(nome)
-    nome_invertido = nome[-1:-(tamanho_nome+1):-1]
+    nome_invertido = nome[-1:-(tamanho_nome+1):-1] #[::-1]
        
     print(f'Seu nome é {nome}')
     print(f'Seu nome invertido é {nome_invertido}')
