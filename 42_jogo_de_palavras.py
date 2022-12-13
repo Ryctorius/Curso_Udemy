@@ -1,3 +1,4 @@
+import os
 while True:
     palavra_secreta = input('Digite a palavra secreta desejada:').strip()
     tamanho_palavra_secreta = len(palavra_secreta)
@@ -22,4 +23,5 @@ while True:
             else:
                 print(f'Palavra formatada: {palavra_formatada}')
         contador_while += 1
+    os.system('clear')
     print(f'Você acertou com {contador_while} tentativas \n')
