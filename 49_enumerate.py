@@ -5,10 +5,10 @@ lista.append('joao')
 
 # print(lista_enumerada)
 
-for item in enumerate(lista):
-    indice, nome = item
-    print(item)
+# for item in enumerate(lista):
+#     indice, nome = item
+#     print(item)
 
 
 for indice, nome  in enumerate(lista):
-    print(indice, nome)
+    print(indice, nome, lista[indice])
