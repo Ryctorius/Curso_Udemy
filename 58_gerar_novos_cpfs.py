@@ -1,14 +1,17 @@
-# CPF TESTE: 746.824.890-70
+import random
 
-cpf = '746.824.890-70'
 
-primeiros_numeros_cpf = cpf[:-3]
-# print(primeiros_numeros_cpf)
-numeros_sem_ponto = primeiros_numeros_cpf.replace('.', '')
-# print(numeros_sem_ponto)
+cpf_gerado = ''
+
+for c in range(0,9):
+    numero = str(random.randint(0, 9))
+    cpf_gerado += numero
+
+print(cpf_gerado)
+
 contador = int(10)
 acumulado = int(0)
-for numeros in numeros_sem_ponto:
+for numeros in cpf_gerado:
     # print(numeros)
     numeros_int = int(numeros)
     multiplicando = numeros_int * contador
@@ -25,8 +28,8 @@ digito = 0 if digito > 9 else digito
 print(f'O primeiro digito do cpf é igual a: {digito}')
 
 
-cpf_dez_digitos = numeros_sem_ponto + str(digito)
-# print(cpf)
+cpf_dez_digitos = cpf_gerado + str(digito)
+
 
 contador = int(11)
 acumulado = int(0)
@@ -41,9 +44,14 @@ for numeros in cpf_dez_digitos:
     contador -=1
 
 segundo_digito = (acumulado * 10) %11
-print(f'{segundo_digito=}')
+# print(f'{segundo_digito=}')
 
 segundo_digito = 0 if segundo_digito > 9 else segundo_digito
 
 print(f'O segundo digito do cpf é igual a: {segundo_digito}')
 
+cpf_completo = cpf_dez_digitos+str(segundo_digito)
+
+cpf_com_pontos = cpf_completo[:3]+'.'+cpf_completo[3:6]+'.'+cpf_completo[6:9]+'-'+ cpf_completo[9:]
+
+print(f'CPF:{cpf_com_pontos}')
